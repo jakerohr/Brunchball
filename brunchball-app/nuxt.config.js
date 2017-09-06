@@ -35,5 +35,6 @@ module.exports = {
       }
     }
   },
-  plugins: ['~plugins/buefy']
+  plugins: ['~plugins/buefy'],
+  css: ['~/assets/main.css']
 }
