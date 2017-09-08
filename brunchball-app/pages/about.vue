@@ -1,16 +1,32 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        About page
-      </h1>
-      <h2 class="subtitle">
-        This is an about page
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <logo/>
+        <h1 class="title">
+          About page
+        </h1>
+        <h2 class="subtitle">
+          This is an about page
+        </h2>
+        <div class="links">
+          <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
+          <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        </div>
+      </div>
+  
+      <div class="column">
+        <logo/>
+        <h1 class="title">
+          About page
+        </h1>
+        <h2 class="subtitle">
+          This is an about page
+        </h2>
+        <div class="links">
+          <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
+          <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        </div>
       </div>
     </div>
   </section>
@@ -33,6 +49,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 64px;
 }
 
 .title {

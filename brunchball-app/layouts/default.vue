@@ -1,7 +1,9 @@
 <template>
   <div>
     <navbar/>
-    <nuxt/>
+    <div class="body-main">
+      <nuxt/>
+    </div>
   </div>
 </template>
 
@@ -18,3 +20,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .body-main {
+    margin-top: 64px;
+  }
+</style>
