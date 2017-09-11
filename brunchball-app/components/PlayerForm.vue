@@ -1,9 +1,10 @@
 <template>
-  <section>
+  <form action="/addPlayers" method="POST" @submit.prevent="onSubmit">
     <b-field label="Name">
       <b-input 
         placeholder="Enter your first and last name..."
-        icon="user-circle">  
+        icon="user-circle"
+        v-model="name">  
       </b-input>
     </b-field>
 
@@ -12,6 +13,7 @@
       message="This email is invalid">
       <b-input type="email"
         placeholder="Enter your email..."
+        v-model="email"
         icon="envelope"
         maxlength="30">
       </b-input>
@@ -23,7 +25,8 @@
       <b-input 
         value="johnsilver"
         placeholder="Enter a username"
-        icon="id-card"      
+        icon="id-card" 
+        v-model="username"     
         maxlength="30"></b-input>
     </b-field>
 
@@ -34,6 +37,7 @@
         value="123" 
         type="password"
         icon="lock" 
+        v-model="password"
         maxlength="30"></b-input>
     </b-field>
     <b-field>
@@ -49,22 +53,29 @@
         <option value="2">Option 2</option>
       </b-select>
     </b-field> -->
-  </section>
+  </form>
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
-  // data () {
-  //   return {
-  //     isActive: false
-  //   }
-  // },
-  // methods: {
-  //   toggleBurger: function () {
-  //     this.isActive = this.isActive === false
-  //     return this.isActive
-  //   }
-  // }
+  data () {
+    return {
+      name: '',
+      email: '',
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    onSubmit: function () {
+      axios.post('../middleware/addPlayers.js', this.$data)
+        .then(respones => alert('success'))
+        .catch(error => alert(error.response.data))
+    }
+  }
 }
 </script>
 
